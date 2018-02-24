@@ -55,9 +55,9 @@ def prepare_sequence(word_seq_id, dep_seq_id, pos_seq_id, target_seq_id):
 class vanilla_RNN(nn.Module):
     def __init__(self, freq_vocab, word2id, dep2id, pos2id):
         super(vanilla_RNN, self).__init__()
-        self.word_embeddings = nn.Embedding(conf.vocab_size+1, conf.emb_dim)
-        self.dep_embeddings  = nn.Embedding(conf.vocab_size,   conf.dep_dim)
-        self.pos_embeddings  = nn.Embedding(conf.vocab_size,   conf.pos_dim)
+        self.word_embeddings = nn.Embedding(len(word2id)+1, conf.emb_dim)
+        self.dep_embeddings  = nn.Embedding(len(dep2id)+1,  conf.dep_dim)
+        self.pos_embeddings  = nn.Embedding(len(pos2id)+1,   conf.pos_dim)
         self.init_all_embeddings()
         
         self.word_embeddings = self.word_embeddings.cpu()
