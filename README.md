@@ -1,2 +1,2 @@
-# code4sc
-code for sentence compression
+## Code for Sentence Compression
+- Detailed steps for reproduction will be released soon.
